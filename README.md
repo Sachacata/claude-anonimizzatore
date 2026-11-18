@@ -1,6 +1,6 @@
 # claude-anonimizzatore
 
-La mod **filtro-pii**: un filtro locale di pseudonimizzazione per **Claude Code** (CLI e app desktop), pensato per chi lavora su documenti italiani con dati personali: sentenze, registri, posta, pratiche.
+La mod **scudo-privacy**: un filtro locale di pseudonimizzazione per **Claude Code** (CLI e app desktop), pensato per chi lavora su documenti italiani con dati personali: sentenze, registri, posta, pratiche.
 
 Prima che un testo arrivi al modello, nomi, codici fiscali, IBAN, email, telefoni, indirizzi e date di nascita vengono sostituiti da segnaposto stabili (`PERS_0001`, `CF_0001`, `IBAN_0001`…). Quando Claude scrive un file o lancia un comando sul tuo computer, i segnaposto tornano dati reali. Il modello lavora sui documenti senza vedere chi sono le persone, e i file su disco restano quelli veri.
 
@@ -14,7 +14,7 @@ Prima che un testo arrivi al modello, nomi, codici fiscali, IBAN, email, telefon
             tu scrivi                    strumenti locali leggono file
                │                                    │
                ▼                                    ▼
-   ┌───────────────────────────── mod filtro-pii ─────────────────────────────┐
+   ┌───────────────────────────── mod scudo-privacy ──────────────────────────┐
    │  prompt e risultati degli strumenti  ──►  servizio locale 127.0.0.1:5117  │
    │                                            dati reali ──► segnaposto      │
    └──────────────────────────────────┬───────────────────────────────────────┘
@@ -22,7 +22,7 @@ Prima che un testo arrivi al modello, nomi, codici fiscali, IBAN, email, telefon
                          Claude vede solo PERS_0001, CF_0001…
                                       │
                                       ▼
-   ┌───────────────────────────── mod filtro-pii ─────────────────────────────┐
+   ┌───────────────────────────── mod scudo-privacy ──────────────────────────┐
    │  Write, Edit, Bash, PowerShell, Grep…:  segnaposto ──► dati reali        │
    └──────────────────────────────────────────────────────────────────────────┘
 ```
@@ -33,6 +33,8 @@ Il progetto ha due parti:
 |---|---|---|
 | **Mod** per Claude Code | `hooks/register.tsx` | intercetta prompt, risultati e chiamate agli strumenti; avvia il servizio; mostra lo stato nella barra sotto il prompt |
 | **Servizio** Python | `servizio/` | riconosce i dati personali (espressioni regolari + spaCy + elenco di nomi di battesimo) e tiene la mappa segnaposto ↔ dati reali |
+
+Sui nomi: la mod si installa come `scudo-privacy`; il comando è `/filtro` e il file di configurazione del progetto si chiama `.filtro-pii.json` («pii» sta per dati personali identificativi).
 
 Regole di fondo:
 
@@ -91,13 +93,13 @@ Se preferisci il tuo Python, installa a mano le librerie e il modello, poi indic
 Da un terminale con Claude Code aperto:
 
 ```
-/plugin install filtro-pii --marketplace sachacata/claude-anonimizzatore
+/plugin install scudo-privacy --marketplace sachacata/claude-anonimizzatore
 ```
 
 Rispondi `y` alla domanda sul marketplace e scegli l'ambito utente. Oppure dalla shell:
 
 ```powershell
-claude plugin install filtro-pii --marketplace sachacata/claude-anonimizzatore
+claude plugin install scudo-privacy --marketplace sachacata/claude-anonimizzatore
 ```
 
 Nell'app desktop il comando `/plugin` non c'è: **+** accanto al prompt → **Plugins** → **Add marketplace** con `sachacata/claude-anonimizzatore` → **Add plugin**. Una mod installata dal terminale nell'ambito utente vale anche per le sessioni locali dell'app desktop.
@@ -107,7 +109,7 @@ Nell'app desktop il comando `/plugin` non c'è: **+** accanto al prompt → **Pl
 ```json
 {
   "env": {
-    "CLAUDE_CODE_PLUGIN_DIRS": "C:\\percorso\\filtro-pii"
+    "CLAUDE_CODE_PLUGIN_DIRS": "C:\\percorso\\claude-anonimizzatore"
   }
 }
 ```

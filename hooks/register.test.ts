@@ -150,7 +150,7 @@ test('sessione nata in un\'altra cartella (desktop, --await-claim): protegge app
 })
 
 // Lo scudo nella barra sotto il prompt (SessionMode).
-const BARRA = { plugin: 'filtro-pii', component: 'SessionMode', props: { modes: [] } } as const
+const BARRA = { plugin: 'scudo-privacy', component: 'SessionMode', props: { modes: [] } } as const
 
 // Sta al posto del motore: disegna la barra com'è senza la mod.
 function barraDelMotore(on: any) {

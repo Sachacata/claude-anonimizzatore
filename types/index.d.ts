@@ -22,7 +22,7 @@ export type Interruttore = { scelta: SceltaFiltro; radiceToken: string | null }
 
 declare module 'claude-code' {
   interface PluginState {
-    'filtro-pii': {
+    'scudo-privacy': {
       scudo: StatoScudo
       interruttore: Interruttore
       contatori:Contatori

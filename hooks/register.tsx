@@ -5,7 +5,7 @@ import type { Interruttore, SceltaFiltro, StatoScudo } from '../types'
 
 import type { Contatori } from '../types'
 
-// filtro-pii — filtro invisibile di anonimizzazione.
+// scudo-privacy — filtro invisibile di anonimizzazione.
 //
 // Nei progetti che hanno `.filtro-pii.json` nella radice:
 //  - tutto ciò che entra nella conversazione (prompt dell'utente, risultati degli
@@ -22,7 +22,7 @@ const PORTA = 5117
 const BASE = `http://127.0.0.1:${PORTA}`
 // Lo script di avvio del servizio viaggia con la mod, in <cartella della mod>\servizio.
 const avvioPs1 = ($: EngineInterface): string => `${$.plugin.root}\\servizio\\avvia_servizio.ps1`
-const CONTATORI = { plugin: 'filtro-pii', key: 'contatori' } as const
+const CONTATORI = { plugin: 'scudo-privacy', key: 'contatori' } as const
 const ZERO: Contatori = { righe: 0, sostituzioni: 0, ripristini: 0, bloccate: 0 }
 
 // Stessa forma di RE_TOKEN in mappa.py (senza i gruppi).
@@ -31,10 +31,10 @@ const RE_TOKEN = /(?<![A-Za-z])(?:PERS|CF|IBAN|EMAIL|TEL|IND|NASC|CARTA)_?0*\d{1
 const STRUMENTI_LOCALI = new Set(['Read', 'Write', 'Edit', 'MultiEdit', 'NotebookEdit', 'Bash', 'PowerShell', 'Grep', 'Glob'])
 const RISERVATI = new Set(['tool', 'tool_use_id', 'consent', 'agentId'])
 const ESTENSIONI_PREDEFINITE = ['.pdf', '.xlsx', '.xlsm', '.xls', '.docx', '.doc', '.pptx', '.png', '.jpg', '.jpeg', '.gif', '.p7m', '.msg']
-const TRATTENUTO = '[filtro-pii: servizio di anonimizzazione non raggiungibile, contenuto trattenuto. Avvia servizio\\avvia_servizio.ps1 (nella cartella della mod) e riprova.]'
+const TRATTENUTO = '[scudo-privacy: servizio di anonimizzazione non raggiungibile, contenuto trattenuto. Avvia servizio\\avvia_servizio.ps1 (nella cartella della mod) e riprova.]'
 
 const REGOLE = [
-  '# Progetto protetto (mod filtro-pii)',
+  '# Progetto protetto (mod scudo-privacy)',
   'In questo progetto i dati personali che vedi sono pseudonimizzati da un filtro locale: PERS_0001 (persona), CF_0001 (codice fiscale), IBAN_0001, EMAIL_0001, TEL_0001, IND_0001 (indirizzo), NASC_0001 (data di nascita). Un suffisso (PERS_0001b) indica la stessa entità con un\'altra grafia.',
   'Usa i token tal quali, anche nei file che scrivi, nei comandi e nei percorsi: vengono rimessi in chiaro automaticamente prima dell\'esecuzione, quindi i file su disco hanno i dati reali anche se tu non li vedi. Non indovinare, non inventare e non alterare mai la grafia di un token (niente «PERS 1», niente maiuscole/minuscole cambiate).',
   'Nei risultati degli strumenti i dati reali tornano token: è normale rileggere un file appena scritto e vedere i token.',
@@ -59,14 +59,14 @@ let ultimoAvvio = 0
 // L'interruttore della sessione (pulsante nella barra, `/filtro acceso|spento`):
 // scavalca `.filtro-pii.json` per questa sessione soltanto. Sta in `$.state`,
 // quindi sopravvive al ricaricamento della mod; qui ne resta una copia.
-const CHIAVE_INTERRUTTORE = { plugin: 'filtro-pii', key: 'interruttore' } as const
+const CHIAVE_INTERRUTTORE = { plugin: 'scudo-privacy', key: 'interruttore' } as const
 const SENZA_SCELTA: Interruttore = { scelta: 'predefinito', radiceToken: null }
 let interruttore: Interruttore | undefined
 const SPEGNI = 'Spegni il filtro'
 const LASCIA = 'Lascia acceso'
 
 const REGOLE_SPENTO = [
-  '# Filtro spento in questa sessione (mod filtro-pii)',
+  '# Filtro spento in questa sessione (mod scudo-privacy)',
   'Il filtro di anonimizzazione è stato spento a mano: da adesso i dati personali arrivano in chiaro.',
   'I token già comparsi nella conversazione (PERS_…, CF_…, IBAN_…) restano validi: negli strumenti locali vengono ancora rimessi in chiaro. Non inventarne di nuovi.',
 ].join('\n')
@@ -89,7 +89,7 @@ async function scriviInterruttore($: EngineInterface, nuovo: Interruttore): Prom
 
 // Lo scudo nella barra sotto il prompt (ui.render su SessionMode, in fondo al
 // file) legge questo valore: scriverlo ridisegna la barra.
-const SCUDO = atom({ plugin: 'filtro-pii', key: 'scudo' } as const, 'spento' as StatoScudo)
+const SCUDO = atom({ plugin: 'scudo-privacy', key: 'scudo' } as const, 'spento' as StatoScudo)
 const CONTROLLO_MS = 30_000
 let scudoNoto: StatoScudo | undefined
 let controllo: unknown
@@ -175,19 +175,19 @@ async function premuto($: EngineInterface): Promise<void> {
   await assicuraConfig($)
   if (!protetto) {
     await imposta($, 'acceso')
-    $.ui.toast('filtro-pii: filtro ACCESO in questa sessione. Vale da adesso: ciò che è già in chat è già passato in chiaro.')
+    $.ui.toast('scudo-privacy: filtro ACCESO in questa sessione. Vale da adesso: ciò che è già in chat è già passato in chiaro.')
     return
   }
   let risposta: string
   try {
     risposta = await $.ui.ask('Spegnere il filtro in questa sessione? Da adesso i dati personali passano in chiaro.', { options: [SPEGNI, LASCIA], header: 'Filtro' })
   } catch {
-    $.ui.toast('filtro-pii: conferma non ottenuta, il filtro resta acceso. Per spegnerlo: /filtro spento')
+    $.ui.toast('scudo-privacy: conferma non ottenuta, il filtro resta acceso. Per spegnerlo: /filtro spento')
     return
   }
   if (risposta !== SPEGNI) return
   await imposta($, 'spento')
-  $.ui.toast('filtro-pii: filtro SPENTO in questa sessione. Da adesso i dati passano in chiaro.')
+  $.ui.toast('scudo-privacy: filtro SPENTO in questa sessione. Da adesso i dati passano in chiaro.')
 }
 
 // Filtro spento dopo essere stato acceso: i token già in conversazione devono
@@ -271,7 +271,7 @@ async function assicuraServizio($: EngineInterface, signal?: AbortSignal, budget
       const timeoutMs = Math.max(1500, Math.min(5000, fine - Date.now() - 1000))
       await $.process.run(['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', avvioPs1($)], { timeoutMs })
     } catch (err) {
-      $.ui.toast(`filtro-pii: non riesco ad avviare il servizio (${String(err)}). Esegui a mano servizio\\avvia_servizio.ps1 nella cartella della mod`)
+      $.ui.toast(`scudo-privacy: non riesco ad avviare il servizio (${String(err)}). Esegui a mano servizio\\avvia_servizio.ps1 nella cartella della mod`)
     }
   }
   for (let i = 0; i < 10 && !servizioOk && Date.now() < fine; i++) {
@@ -289,7 +289,7 @@ async function chiama($: EngineInterface, via: '/anonimizza' | '/ripristina', te
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ progetto: radice, testo }),
   })
-  if (!r.ok) throw new Error(`filtro-pii ${via}: HTTP ${r.status}`)
+  if (!r.ok) throw new Error(`scudo-privacy ${via}: HTTP ${r.status}`)
   const out = JSON.parse(r.text) as { testo: string; n: number }
   servizioOk = true
   return out
@@ -371,7 +371,7 @@ function estensioneDi(percorso: string): string {
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     // Un errore qui non deve impedire la lettura della configurazione.
-    await $.command.register({ name: 'filtro', description: 'Stato del filtro di anonimizzazione (filtro-pii)' }).catch(() => undefined)
+    await $.command.register({ name: 'filtro', description: 'Stato del filtro di anonimizzazione (scudo-privacy)' }).catch(() => undefined)
     cwdSessione = typeof (e as { cwd?: unknown }).cwd === 'string' ? (e as { cwd: string }).cwd : undefined
     await leggiConfig($)
     if (protetto) await assicuraServizio($, next.signal, 6000)
@@ -386,12 +386,12 @@ export const register: Register = on => {
     // passano, e la loro riga viene comunque filtrata in session.append.
     if (e.command || e.isMeta) return next(e)
     if (e.attachments && e.attachments.length > 0) {
-      $.ui.toast('filtro-pii: allegati non filtrabili in un progetto protetto. Salva il file nel progetto e chiedi di estrarne il testo.')
-      return { drop: 'filtro-pii: prompt con allegati fermato (progetto protetto, allegati non filtrabili)' }
+      $.ui.toast('scudo-privacy: allegati non filtrabili in un progetto protetto. Salva il file nel progetto e chiedi di estrarne il testo.')
+      return { drop: 'scudo-privacy: prompt con allegati fermato (progetto protetto, allegati non filtrabili)' }
     }
     if (!await assicuraServizio($, next.signal)) {
-      $.ui.toast('filtro-pii: servizio non raggiungibile, prompt fermato')
-      return { drop: 'filtro-pii: servizio di anonimizzazione non raggiungibile' }
+      $.ui.toast('scudo-privacy: servizio non raggiungibile, prompt fermato')
+      return { drop: 'scudo-privacy: servizio di anonimizzazione non raggiungibile' }
     }
     try {
       const { testo, n } = await chiama($, '/anonimizza', e.text)
@@ -399,10 +399,10 @@ export const register: Register = on => {
       return next({ ...e, text: testo })
     } catch (err) {
       servizioOk = false
-      $.ui.toast(`filtro-pii: servizio non raggiungibile, prompt fermato (${String(err)})`)
-      return { drop: 'filtro-pii: servizio di anonimizzazione non raggiungibile' }
+      $.ui.toast(`scudo-privacy: servizio non raggiungibile, prompt fermato (${String(err)})`)
+      return { drop: 'scudo-privacy: servizio di anonimizzazione non raggiungibile' }
     }
-  }).catch(($, e, next) => (next.called || !protetto ? next(e) : { drop: 'filtro-pii: errore nel filtro, prompt fermato per sicurezza' }))
+  }).catch(($, e, next) => (next.called || !protetto ? next(e) : { drop: 'scudo-privacy: errore nel filtro, prompt fermato per sicurezza' }))
 
   on('session.append', async ($, e, next) => {
     await assicuraConfig($)
@@ -432,7 +432,7 @@ export const register: Register = on => {
       if (est && bloccate.includes(est)) {
         await somma($, { bloccate: 1 })
         return {
-          deny: `filtro-pii: progetto protetto, lettura diretta di «${est}» negata (il file arriverebbe intero ai server). `
+          deny: `scudo-privacy: progetto protetto, lettura diretta di «${est}» negata (il file arriverebbe intero ai server). `
             + 'Estrai il testo con uno script locale (`py -I`: PyMuPDF per PDF, openpyxl per Excel, python-docx per Word, extract_msg per .msg) e leggi lo stdout, che viene filtrato.',
         }
       }
@@ -445,9 +445,9 @@ export const register: Register = on => {
       return next(nuovo)
     } catch (err) {
       servizioOk = false
-      return { deny: `filtro-pii: servizio di anonimizzazione non raggiungibile (${String(err)}); chiamata fermata per non far uscire dati in chiaro.` }
+      return { deny: `scudo-privacy: servizio di anonimizzazione non raggiungibile (${String(err)}); chiamata fermata per non far uscire dati in chiaro.` }
     }
-  }).catch(($, e, next) => (next.called || !protetto ? next(e) : { deny: 'filtro-pii: errore nel filtro, chiamata fermata per sicurezza' }))
+  }).catch(($, e, next) => (next.called || !protetto ? next(e) : { deny: 'scudo-privacy: errore nel filtro, chiamata fermata per sicurezza' }))
 
   on('prompt.compose', async ($, e, next) => {
     const r = await next(e)
@@ -455,9 +455,9 @@ export const register: Register = on => {
     if (!protetto) {
       // Spento dopo essere stato acceso: il modello deve sapere che i token restano validi.
       if (interruttore?.scelta !== 'spento' || !interruttore.radiceToken) return r
-      return { sections: [...r.sections, { id: 'filtro-pii:regole', text: REGOLE_SPENTO, scope: 'session' }] }
+      return { sections: [...r.sections, { id: 'scudo-privacy:regole', text: REGOLE_SPENTO, scope: 'session' }] }
     }
-    return { sections: [...r.sections, { id: 'filtro-pii:regole', text: REGOLE, scope: 'session' }] }
+    return { sections: [...r.sections, { id: 'scudo-privacy:regole', text: REGOLE, scope: 'session' }] }
   })
 
   on('command.run', { command: 'filtro' }, async ($, e) => {
