@@ -1,10 +1,12 @@
 # claude-anonimizzatore
 
+**Italiano** · [English](README.en.md)
+
 La mod **scudo-privacy**: un filtro locale di pseudonimizzazione per **Claude Code** (CLI e app desktop), pensato per chi lavora su documenti italiani con dati personali: sentenze, registri, posta, pratiche.
 
 Prima che un testo arrivi al modello, nomi, codici fiscali, IBAN, email, telefoni, indirizzi e date di nascita vengono sostituiti da segnaposto stabili (`PERS_0001`, `CF_0001`, `IBAN_0001`…). Quando Claude scrive un file o lancia un comando sul tuo computer, i segnaposto tornano dati reali. Il modello lavora sui documenti senza vedere chi sono le persone, e i file su disco restano quelli veri.
 
-> **In English.** A Claude Code mod (hooks module) plus a local Python service that pseudonymises Italian personal data (names, tax codes, IBANs, emails, mobile numbers, addresses, birth dates) before it reaches the model, and restores it in local tool calls. Windows only, Italian text only. Documentation is in Italian.
+![Come funziona scudo-privacy](docs/infografica.it.svg)
 
 **Leggi prima i [limiti](#limiti).** È un filtro «al meglio», non una garanzia: riduce molto i dati personali che escono dal computer, non li azzera, e non sostituisce le valutazioni del titolare del trattamento (GDPR, regole del tuo ente).
 
@@ -251,12 +253,16 @@ types/            tipi dello stato della mod
 servizio/         motore.py (riconoscimento), mappa.py (mappa cifrata), servizio.py (HTTP locale),
                   semina.py (elenchi «noti»), nomi_battesimo.py, misura_a_secco.py, ripristina_file.py
 esempi/           dati inventati per il collaudo
-docs/             limiti e collaudo
+docs/             limiti, collaudo, infografica
 ```
 
 Il servizio espone, solo su `127.0.0.1`: `GET /stato`, `POST /anonimizza {progetto, testo}`, `POST /ripristina {progetto, testo}`, `POST /ricarica {progetto}`, `POST /arresta`.
 
 Tutti i dati nei test e negli esempi sono inventati. Se contribuisci, non inserire mai dati di persone reali, nemmeno nei messaggi di commit o nelle segnalazioni: per descrivere una fuga, riproducila con nomi di fantasia.
+
+## Sostieni il progetto
+
+Se questo strumento ti è utile, puoi offrirmi un caffè: [buymeacoffee.com/sachacata](https://buymeacoffee.com/sachacata).
 
 ## Licenza
 

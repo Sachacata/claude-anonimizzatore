@@ -1,5 +1,7 @@
 # Limiti noti
 
+**Italiano** · [English](LIMITS.en.md)
+
 Il filtro lavora «al meglio»: nel dubbio maschera, ma non vede tutto. Questo elenco viene dalle prove fatte durante lo sviluppo. Prima di usarlo con dati veri, misura il comportamento sui tuoi documenti con `servizio\misura_a_secco.py`.
 
 ## Dati che possono restare in chiaro

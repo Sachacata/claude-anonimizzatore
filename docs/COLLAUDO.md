@@ -1,5 +1,7 @@
 # Collaudo in 4 punti
 
+**Italiano** · [English](TESTING.en.md)
+
 Da fare dopo l'installazione e **a ogni aggiornamento della mod**, sempre in una sessione nuova (una sessione già aperta continua a usare la mod che aveva caricato all'avvio).
 
 Preparazione: copia la cartella `esempi` in un posto di prova, rinomina `filtro-pii.esempio.json` in `.filtro-pii.json` e apri una sessione di Claude Code in quella cartella. I dati di `nota.txt` sono inventati.

@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1535" width="1200" height="1535" role="img">
+<defs>
+<marker id="fb" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1d4ed8"/></marker>
+<marker id="fv" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#15803d"/></marker>
+</defs>
+<rect x="0" y="0" width="1200" height="1535" rx="0" fill="#f6f8fb"/>
+<rect x="0" y="0" width="1200" height="118" rx="0" fill="#14213d"/>
+<g transform="translate(72,56) scale(1.25)"><path d="M0,-24 L20,-15 L20,3 C20,17 9,26 0,30 C-9,26 -20,17 -20,3 L-20,-15 Z" fill="#22c55e"/><path d="M-9,2 L-2,10 L11,-7" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="118" y="56" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff" text-anchor="start">scudo-privacy</text>
+<text x="118" y="90" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#cbd5e1" text-anchor="start">Come funziona il filtro che nasconde i dati personali a Claude Code</text>
+<text x="1160" y="46" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#94a3b8" text-anchor="end">github.com/Sachacata/claude-anonimizzatore</text>
+<circle cx="58" cy="164" r="16" fill="#14213d"/>
+<text x="58" y="170" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="86" y="170" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#14213d" text-anchor="start">In entrata: i dati personali diventano segnaposto</text>
+<rect x="40" y="192" width="340" height="258" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="222" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="start" letter-spacing="1.2">IL TUO COMPUTER</text>
+<text x="60" y="246" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1b2430" text-anchor="start">Documento con i dati veri</text>
+<rect x="60" y="262" width="300" height="168" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="74" y="292" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="600" fill="#b91c1c" text-anchor="start">Ricorrente: Mario Rossi</text>
+<text x="74" y="321" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="600" fill="#b91c1c" text-anchor="start">C.F. RSSMRA80A01H501U</text>
+<text x="74" y="350" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="600" fill="#b91c1c" text-anchor="start">IBAN IT60 X054 2811 1010…</text>
+<text x="74" y="379" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="600" fill="#b91c1c" text-anchor="start">mario.rossi@example.com</text>
+<text x="74" y="408" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="600" fill="#b91c1c" text-anchor="start">Cell. 333 1234567</text>
+<rect x="430" y="192" width="340" height="258" rx="14" fill="#ecfdf5" stroke="#15803d" stroke-width="2"/>
+<g transform="translate(600,242) scale(1.0)"><path d="M0,-24 L20,-15 L20,3 C20,17 9,26 0,30 C-9,26 -20,17 -20,3 L-20,-15 Z" fill="#15803d"/><path d="M-9,2 L-2,10 L11,-7" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="600" y="298" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#15803d" text-anchor="middle" letter-spacing="1.2">FILTRO LOCALE</text>
+<text x="600" y="328" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="middle">servizio su 127.0.0.1</text>
+<text x="600" y="353" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="middle">regole + spaCy (italiano)</text>
+<text x="600" y="378" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="middle">mappa cifrata sul tuo PC</text>
+<rect x="478" y="398" width="244" height="34" rx="17" fill="#15803d"/>
+<text x="600" y="420" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">dati veri  →  segnaposto</text>
+<rect x="820" y="192" width="340" height="258" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="840" y="222" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="start" letter-spacing="1.2">CLAUDE (CLOUD)</text>
+<text x="840" y="246" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1b2430" text-anchor="start">Il modello vede solo segnaposto</text>
+<rect x="840" y="262" width="300" height="168" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="854" y="292" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" fill="#1b2430" xml:space="preserve">Ricorrente: <tspan fill="#1d4ed8" font-weight="700">PERS_0001</tspan></text>
+<text x="854" y="321" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" fill="#1b2430" xml:space="preserve">C.F. <tspan fill="#1d4ed8" font-weight="700">CF_0001</tspan></text>
+<text x="854" y="350" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" fill="#1b2430" xml:space="preserve">IBAN <tspan fill="#1d4ed8" font-weight="700">IBAN_0001</tspan></text>
+<text x="854" y="379" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" fill="#1b2430" xml:space="preserve"><tspan fill="#1d4ed8" font-weight="700">EMAIL_0001</tspan></text>
+<text x="854" y="408" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" fill="#1b2430" xml:space="preserve">Cell. <tspan fill="#1d4ed8" font-weight="700">TEL_0001</tspan></text>
+<line x1="386" y1="321" x2="418" y2="321" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round" marker-end="url(#fb)"/>
+<line x1="776" y1="321" x2="808" y2="321" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round" marker-end="url(#fb)"/>
+<circle cx="58" cy="494" r="16" fill="#14213d"/>
+<text x="58" y="500" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="86" y="500" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#14213d" text-anchor="start">In uscita: i segnaposto tornano dati veri, ma solo sul tuo computer</text>
+<rect x="820" y="522" width="340" height="178" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="840" y="552" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="start" letter-spacing="1.2">CLAUDE (CLOUD)</text>
+<text x="840" y="576" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1b2430" text-anchor="start">Chiede di scrivere un file:</text>
+<rect x="840" y="594" width="300" height="54" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="854" y="627" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" fill="#1b2430" xml:space="preserve">Lettera per <tspan fill="#1d4ed8" font-weight="700">PERS_0001</tspan></text>
+<rect x="430" y="522" width="340" height="178" rx="14" fill="#ecfdf5" stroke="#15803d" stroke-width="2"/>
+<text x="600" y="554" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#15803d" text-anchor="middle" letter-spacing="1.2">FILTRO LOCALE</text>
+<text x="600" y="584" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="middle">solo negli strumenti locali:</text>
+<text x="600" y="609" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="400" fill="#1b2430" text-anchor="middle">Write, Edit, Bash, PowerShell…</text>
+<rect x="478" y="644" width="244" height="34" rx="17" fill="#15803d"/>
+<text x="600" y="666" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">segnaposto  →  dati veri</text>
+<rect x="40" y="522" width="340" height="178" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="552" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="start" letter-spacing="1.2">IL TUO COMPUTER</text>
+<text x="60" y="576" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#1b2430" text-anchor="start">File salvato su disco:</text>
+<rect x="60" y="594" width="300" height="54" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="74" y="627" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" fill="#1b2430" xml:space="preserve">Lettera per <tspan fill="#b91c1c" font-weight="700">Mario Rossi</tspan></text>
+<line x1="814" y1="611" x2="782" y2="611" stroke="#15803d" stroke-width="4" stroke-linecap="round" marker-end="url(#fv)"/>
+<line x1="424" y1="611" x2="392" y2="611" stroke="#15803d" stroke-width="4" stroke-linecap="round" marker-end="url(#fv)"/>
+<rect x="40" y="718" width="1120" height="46" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="600" y="747" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="600" fill="#b91c1c" text-anchor="middle">Verso web, posta e connettori esterni i segnaposto restano segnaposto: i dati veri non escono.</text>
+<circle cx="58" cy="812" r="16" fill="#14213d"/>
+<text x="58" y="818" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="86" y="818" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#14213d" text-anchor="start">Tre regole di sicurezza</text>
+<rect x="40" y="840" width="360" height="122" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="40" y="840" width="8" height="122" rx="4" fill="#15803d"/>
+<text x="66" y="876" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" fill="#14213d" text-anchor="start">Tutto in locale</text>
+<text x="66" y="908" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#475569" text-anchor="start">Il servizio ascolta solo su 127.0.0.1</text>
+<text x="66" y="932" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#475569" text-anchor="start">e non fa chiamate di rete.</text>
+<rect x="420" y="840" width="360" height="122" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="420" y="840" width="8" height="122" rx="4" fill="#15803d"/>
+<text x="446" y="876" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" fill="#14213d" text-anchor="start">Filtro fermo? Non passa nulla</text>
+<text x="446" y="908" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#475569" text-anchor="start">Prompt bloccato, risultati trattenuti:</text>
+<text x="446" y="932" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#475569" text-anchor="start">mai testo in chiaro.</text>
+<rect x="800" y="840" width="360" height="122" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="800" y="840" width="8" height="122" rx="4" fill="#15803d"/>
+<text x="826" y="876" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" fill="#14213d" text-anchor="start">PDF, Office e immagini bloccati</text>
+<text x="826" y="908" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#475569" text-anchor="start">Niente lettura diretta: il testo si</text>
+<text x="826" y="932" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#475569" text-anchor="start">estrae in locale e passa dal filtro.</text>
+<circle cx="58" cy="1006" r="16" fill="#14213d"/>
+<text x="58" y="1012" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="86" y="1012" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#14213d" text-anchor="start">Cosa riconosce</text>
+<rect x="40" y="1034" width="265" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="1061" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="start">PERS</text>
+<text x="124" y="1061" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="start">nomi e cognomi</text>
+<rect x="325" y="1034" width="265" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="345" y="1061" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="start">CF</text>
+<text x="409" y="1061" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="start">codice fiscale</text>
+<rect x="610" y="1034" width="265" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="630" y="1061" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="start">IBAN</text>
+<text x="694" y="1061" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="start">conto corrente</text>
+<rect x="895" y="1034" width="265" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="915" y="1061" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="start">EMAIL</text>
+<text x="979" y="1061" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="start">posta elettronica</text>
+<rect x="40" y="1088" width="265" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="1115" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="start">TEL</text>
+<text x="124" y="1115" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="start">cellulare</text>
+<rect x="325" y="1088" width="265" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="345" y="1115" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="start">IND</text>
+<text x="409" y="1115" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="start">indirizzo</text>
+<rect x="610" y="1088" width="265" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="630" y="1115" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="start">NASC</text>
+<text x="694" y="1115" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="start">data di nascita</text>
+<rect x="895" y="1088" width="265" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="915" y="1115" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="start">CARTA</text>
+<text x="979" y="1115" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="400" fill="#1b2430" text-anchor="start">numero di carta</text>
+<circle cx="58" cy="1180" r="16" fill="#14213d"/>
+<text x="58" y="1186" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text x="86" y="1186" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#14213d" text-anchor="start">Limiti da conoscere</text>
+<rect x="40" y="1208" width="1120" height="122" rx="14" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+<text x="66" y="1244" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#b45309" text-anchor="start">Qualcosa può sfuggire</text>
+<text x="66" y="1276" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#1b2430" text-anchor="start">cognomi isolati, nomi rari:</text>
+<text x="66" y="1300" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#1b2430" text-anchor="start">prova prima sui tuoi documenti</text>
+<text x="438" y="1244" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#b45309" text-anchor="start">Le immagini non sono filtrate</text>
+<text x="438" y="1276" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#1b2430" text-anchor="start">screenshot e scansioni arrivano</text>
+<text x="438" y="1300" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#1b2430" text-anchor="start">al modello così come sono</text>
+<text x="810" y="1244" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#b45309" text-anchor="start">Solo Windows, solo italiano</text>
+<text x="810" y="1276" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#1b2430" text-anchor="start">riduce i dati che escono, non è</text>
+<text x="810" y="1300" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" fill="#1b2430" text-anchor="start">una garanzia di conformità al GDPR</text>
+<circle cx="58" cy="1374" r="16" fill="#14213d"/>
+<text x="58" y="1380" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<text x="86" y="1380" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#14213d" text-anchor="start">Lo stato, sempre visibile sotto il prompt</text>
+<rect x="40" y="1402" width="360" height="70" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="56" y="1414" width="138" height="26" rx="13" fill="#dcfce7"/>
+<text x="125" y="1432" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#15803d" text-anchor="middle">Protetta</text>
+<text x="58" y="1460" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#475569" text-anchor="start">progetto protetto, servizio attivo</text>
+<rect x="420" y="1402" width="360" height="70" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="436" y="1414" width="138" height="26" rx="13" fill="#fef3c7"/>
+<text x="505" y="1432" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#b45309" text-anchor="middle">Filtro fermo</text>
+<text x="438" y="1460" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#475569" text-anchor="start">servizio fermo: tutto trattenuto</text>
+<rect x="800" y="1402" width="360" height="70" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="816" y="1414" width="138" height="26" rx="13" fill="#e2e8f0"/>
+<text x="885" y="1432" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">Filtro spento</text>
+<text x="818" y="1460" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#475569" text-anchor="start">un clic, o /filtro acceso, lo accende</text>
+<text x="600" y="1512" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#475569" text-anchor="middle">Licenza MIT  ·  tutti i dati d'esempio sono inventati</text>
+</svg>
