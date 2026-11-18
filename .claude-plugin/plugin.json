@@ -1,0 +1,19 @@
+{
+  "name": "filtro-pii",
+  "version": "0.1.0",
+  "author": {
+    "name": "Sacha Catalano"
+  },
+  "description": "Filtro locale di pseudonimizzazione per testi italiani: sostituisce nomi, codici fiscali, IBAN, email, telefoni, indirizzi e date di nascita con segnaposto prima che arrivino al modello e li ripristina nei file scritti (progetti con .filtro-pii.json)",
+  "types": "./types/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "privacy",
+    "pii",
+    "gdpr",
+    "italiano",
+    "pseudonimizzazione"
+  ],
+  "repository": "https://github.com/sachacata/claude-anonimizzatore",
+  "homepage": "https://github.com/sachacata/claude-anonimizzatore"
+}

@@ -1,0 +1,10 @@
+NOTA DI PROVA - tutti i dati sono inventati
+
+1. Ha telefonato la sig.ra Ginevra Quarzenti (cell. 333 1234567) per la pratica 101/2026.
+2. Il ricorrente Tobia Malvestri, nato a Thiene il 14/03/1985, C.F. MLVTBO85C14L157X, e' assistito dall'Avv. Ornella Fabrizzoni.
+3. Rimborso da accreditare sull'IBAN IT60X0542811101000000123456 intestato a QUARZENTI GINEVRA.
+4. Residente in via Garibaldi 12, 36061 Bassano del Grappa.
+5. Scrivere a ginevra.quarzenti@example.com e in copia a studio.fabrizzoni@example.org.
+6. ha richiamato anche edoardo pravattoni, risentirlo domani.
+7. Registro: 101;2026;MALVESTRI;TOBIA;500
+8. Firmato: Il Giudice Leonilde Castravelli

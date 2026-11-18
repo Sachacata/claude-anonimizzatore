@@ -1,0 +1,14 @@
+{
+  "name": "claude-anonimizzatore",
+  "description": "La mod filtro-pii per Claude Code: pseudonimizzazione locale dei dati personali nei testi italiani",
+  "owner": {
+    "name": "Sacha Catalano"
+  },
+  "plugins": [
+    {
+      "name": "filtro-pii",
+      "source": "./",
+      "description": "Filtro locale che pseudonimizza i dati personali (italiano) prima che arrivino al modello e li ripristina nei file scritti"
+    }
+  ]
+}

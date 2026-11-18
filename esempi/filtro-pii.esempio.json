@@ -1,0 +1,5 @@
+{
+  "attivo": true,
+  "esclusi": ["Bassano del Grappa", "Ufficio Pratiche"],
+  "estensioni_bloccate": [".pdf", ".xlsx", ".xlsm", ".xls", ".docx", ".doc", ".pptx", ".png", ".jpg", ".jpeg", ".gif", ".p7m", ".msg"]
+}

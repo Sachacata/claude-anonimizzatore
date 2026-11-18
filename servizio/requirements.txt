@@ -1,0 +1,13 @@
+# Servizio di anonimizzazione (indispensabili)
+spacy>=3.8,<4
+cryptography>=42
+openpyxl>=3.1
+
+# Strumenti di contorno (misura_a_secco.py, ripristina_file.py) e script con cui
+# Claude estrae il testo da PDF, Word e .msg nei progetti protetti
+pymupdf>=1.24
+python-docx>=1.1
+extract-msg>=0.48
+
+# Il modello italiano di spaCy si scarica a parte (lo fa installa.ps1):
+#   python -m spacy download it_core_news_lg
