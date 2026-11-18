@@ -123,19 +123,44 @@ Then open a new session.
 
 ### Protecting a project
 
-Create a `.filtro-pii.json` file in the project folder. This is enough:
+After installing, the filter is **not switched on everywhere**: it only works in the folders you point it to. A "project" is simply the folder you open Claude Code in, the one with your documents. There are two ways to switch it on.
+
+#### Way 1 — always on in that folder (recommended)
+
+Put a small file named `.filtro-pii.json` in the project folder, containing just this line:
 
 ```json
 { "attivo": true }
 ```
 
-From then on, in every session opened in that folder:
+To create it without mistakes, open PowerShell **inside the project folder** and run:
 
-- the bar below the prompt shows **🛡 Protetta** ("protected");
-- at the first request the service starts by itself (a cold start takes 10-15 seconds: meanwhile the bar says **⚠ Filtro fermo**, "filter down", and nothing gets through);
-- in Claude's answers you see placeholders, not names. The files Claude writes contain the real data.
+```powershell
+Set-Content -Path .filtro-pii.json -Value '{ "attivo": true }' -Encoding ascii
+```
 
-For a project without the file you can switch the filter on for the current session only: click **Filtro spento** ("filter off") in the bar, or type `/filtro acceso`. It applies from that moment: whatever is already in the chat has already gone through in plain text.
+If you prefer to do it by hand with Notepad: type the line, then **Save as**, choose type "All files" and name it `.filtro-pii.json`. Three things to watch:
+
+- the name starts with a dot;
+- it must not become `.filtro-pii.json.txt` (it does if you leave the type as "Text documents");
+- the file goes in the folder you open the session in, not in a subfolder.
+
+Then open a **new session** in that folder. From then on the filter switches itself on every time.
+
+#### Way 2 — on for the current session only
+
+No file needed: click the **Filtro spento** ("filter off") label in the bar below the prompt, or type `/filtro acceso`. It lasts until you close the session.
+
+Careful: it applies **from that moment on**. Whatever you had already typed or had Claude read before switching it on has already reached the model in plain text. For real data use way 1.
+
+#### How to tell it is on
+
+- The bar below the prompt shows **🛡 Protetta** ("protected").
+- At the first request the service starts by itself: a cold start takes 10-15 seconds, during which the bar says **⚠ Filtro fermo** ("filter down") and nothing gets through. Then it goes back to **🛡 Protetta**.
+- Typing `/filtro` shows "Progetto protetto" (project protected) and "servizio attivo" (service running).
+- In Claude's answers you see placeholders (`PERS_…`), not names. The files Claude writes to disk contain the real data.
+
+If the bar says **Filtro spento** in a folder where you put the file, the filter is **not protecting you**: check the file's name and location with `/filtro`, which tells you why.
 
 ### Commands
 

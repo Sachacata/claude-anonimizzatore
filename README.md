@@ -138,19 +138,44 @@ Poi apri una sessione nuova.
 
 ### Proteggere un progetto
 
-Crea un file `.filtro-pii.json` nella cartella del progetto. Basta questo:
+Dopo l'installazione il filtro **non è acceso dappertutto**: lavora solo nelle cartelle che gli indichi tu. Un «progetto» è semplicemente la cartella in cui apri Claude Code, quella con i tuoi documenti. Puoi accenderlo in due modi.
+
+#### Modo 1 — sempre acceso in quella cartella (consigliato)
+
+Metti nella cartella del progetto un piccolo file di nome `.filtro-pii.json` che contiene solo questa riga:
 
 ```json
 { "attivo": true }
 ```
 
-Da quel momento, in ogni sessione aperta in quella cartella:
+Per crearlo senza sbagliare, apri PowerShell **dentro la cartella del progetto** e lancia:
 
-- nella barra sotto il prompt compare **🛡 Protetta**;
-- alla prima richiesta il servizio parte da solo (a freddo servono 10-15 secondi: nel frattempo la barra dice **⚠ Filtro fermo** e nulla passa);
-- nelle risposte di Claude vedi i segnaposto, non i nomi. I file che Claude scrive contengono i dati reali.
+```powershell
+Set-Content -Path .filtro-pii.json -Value '{ "attivo": true }' -Encoding ascii
+```
 
-Per un progetto senza file puoi accendere il filtro per la sola sessione: clic su **Filtro spento** nella barra, oppure `/filtro acceso`. Vale da quel momento in poi: ciò che è già in chat è già passato in chiaro.
+Se preferisci farlo a mano con il Blocco note: scrivi la riga, poi **Salva con nome**, scegli Tipo «Tutti i file» e come nome `.filtro-pii.json`. Tre cose a cui stare attenti:
+
+- il nome comincia con un punto;
+- non deve diventare `.filtro-pii.json.txt` (succede se lasci il tipo «Documenti di testo»);
+- il file va nella cartella in cui apri la sessione, non in una sottocartella.
+
+Poi apri una **sessione nuova** in quella cartella. Da lì in avanti il filtro si accende da solo ogni volta.
+
+#### Modo 2 — acceso solo per la sessione in corso
+
+Non serve nessun file: clic sulla scritta **Filtro spento** nella barra sotto il prompt, oppure scrivi `/filtro acceso`. Vale fino alla chiusura della sessione.
+
+Attenzione: vale **da quel momento in poi**. Ciò che avevi già scritto o fatto leggere prima di accenderlo è già arrivato al modello in chiaro. Per i dati veri usa il modo 1.
+
+#### Come capire che è acceso
+
+- Nella barra sotto il prompt compare **🛡 Protetta**.
+- Alla prima richiesta il servizio parte da solo: a freddo servono 10-15 secondi, durante i quali la barra dice **⚠ Filtro fermo** e nulla passa. Poi torna **🛡 Protetta**.
+- Scrivendo `/filtro` leggi «Progetto protetto» e «servizio attivo».
+- Nelle risposte di Claude vedi i segnaposto (`PERS_…`), non i nomi. I file che Claude scrive sul disco contengono invece i dati reali.
+
+Se la barra dice **Filtro spento** in una cartella dove hai messo il file, il filtro **non sta proteggendo**: controlla nome e posizione del file con `/filtro`, che ti dice perché.
 
 ### Comandi
 
