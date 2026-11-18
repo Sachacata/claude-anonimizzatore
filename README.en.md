@@ -77,21 +77,35 @@ If you prefer your own Python, install the libraries and the model by hand, then
 
 ### 2. The mod in Claude Code
 
-From a terminal with Claude Code open:
+Pick **just one** of the two ways below: they do the same thing. You install once and it applies to every session, in the terminal and in the desktop app alike.
+
+**Way A — from the terminal (recommended).** Open Claude Code in a terminal and type at the prompt:
 
 ```
 /plugin install scudo-privacy --marketplace sachacata/claude-anonimizzatore
 ```
 
-Answer `y` to the marketplace question and choose the user scope. Or from the shell:
+Answer `y` to the marketplace question and choose the user scope (the first entry, just press Enter). Alternatively, the same command from the shell, without opening Claude Code:
 
 ```powershell
 claude plugin install scudo-privacy --marketplace sachacata/claude-anonimizzatore
 ```
 
-The desktop app has no `/plugin` command: **+** next to the prompt → **Plugins** → **Add marketplace** with `sachacata/claude-anonimizzatore` → **Add plugin**. A mod installed from the terminal at user scope also applies to the desktop app's local sessions.
+**Way B — from the desktop app.** The app has no `/plugin` command; use the menu:
 
-**Alternatively, from the cloned folder** (handy if you want to change the code): add the folder to the `CLAUDE_CODE_PLUGIN_DIRS` variable in the `env` block of `%USERPROFILE%\.claude\settings.json`:
+1. click **+** next to the prompt box;
+2. **Plugins**;
+3. **Add marketplace** and type `sachacata/claude-anonimizzatore`;
+4. **Add plugin** on the `scudo-privacy` entry.
+
+After A or B, open a **new session**: the mod is installed and nothing else is needed.
+
+<details>
+<summary><b>Only if you want to change the code</b> (optional: not needed to use the filter)</summary>
+
+If you want to change the mod's code and see the effect straight away, you can have Claude Code load it directly from the folder cloned in step 1, **instead of** ways A and B (not in addition: the mod would be loaded twice).
+
+Open `%USERPROFILE%\.claude\settings.json` and add the folder to the `CLAUDE_CODE_PLUGIN_DIRS` variable in the `env` block:
 
 ```json
 {
@@ -101,7 +115,9 @@ The desktop app has no `/plugin` command: **+** next to the prompt → **Plugins
 }
 ```
 
-After installing, open a **new session**.
+Then open a new session.
+
+</details>
 
 ## Usage
 

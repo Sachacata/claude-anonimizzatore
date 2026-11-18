@@ -92,21 +92,35 @@ Se preferisci il tuo Python, installa a mano le librerie e il modello, poi indic
 
 ### 2. Mod in Claude Code
 
-Da un terminale con Claude Code aperto:
+Scegli **uno solo** dei due modi qui sotto: fanno la stessa cosa. L'installazione si fa una volta e vale per tutte le sessioni, sia dal terminale sia nell'app desktop.
+
+**Modo A — dal terminale (consigliato).** Apri Claude Code in un terminale e scrivi al prompt:
 
 ```
 /plugin install scudo-privacy --marketplace sachacata/claude-anonimizzatore
 ```
 
-Rispondi `y` alla domanda sul marketplace e scegli l'ambito utente. Oppure dalla shell:
+Rispondi `y` alla domanda sul marketplace e scegli l'ambito utente (la prima voce, basta Invio). In alternativa, lo stesso comando dalla shell, senza aprire Claude Code:
 
 ```powershell
 claude plugin install scudo-privacy --marketplace sachacata/claude-anonimizzatore
 ```
 
-Nell'app desktop il comando `/plugin` non c'è: **+** accanto al prompt → **Plugins** → **Add marketplace** con `sachacata/claude-anonimizzatore` → **Add plugin**. Una mod installata dal terminale nell'ambito utente vale anche per le sessioni locali dell'app desktop.
+**Modo B — dall'app desktop.** Nell'app il comando `/plugin` non esiste, si usa il menu:
 
-**In alternativa, dalla cartella clonata** (comodo se vuoi modificare il codice): aggiungi la cartella alla variabile `CLAUDE_CODE_PLUGIN_DIRS` nel blocco `env` di `%USERPROFILE%\.claude\settings.json`:
+1. clic su **+** accanto alla casella del prompt;
+2. **Plugins**;
+3. **Add marketplace** e scrivi `sachacata/claude-anonimizzatore`;
+4. **Add plugin** sulla voce `scudo-privacy`.
+
+Fatto A oppure B, apri una **sessione nuova**: la mod è installata e non serve altro.
+
+<details>
+<summary><b>Solo per chi vuole modificare il codice</b> (facoltativo: per usare il filtro non serve)</summary>
+
+Se vuoi cambiare il codice della mod e vedere subito l'effetto, puoi farla caricare a Claude Code direttamente dalla cartella clonata al passo 1, **al posto** dei modi A e B (non in aggiunta: la mod verrebbe caricata due volte).
+
+Apri `%USERPROFILE%\.claude\settings.json` e aggiungi la cartella alla variabile `CLAUDE_CODE_PLUGIN_DIRS` nel blocco `env`:
 
 ```json
 {
@@ -116,7 +130,9 @@ Nell'app desktop il comando `/plugin` non c'è: **+** accanto al prompt → **Pl
 }
 ```
 
-Dopo l'installazione apri una **sessione nuova**.
+Poi apri una sessione nuova.
+
+</details>
 
 ## Uso
 
